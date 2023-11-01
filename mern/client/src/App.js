@@ -21,6 +21,10 @@ import BooksList from "./components/book/booksList";
 import AddBook from "./components/book/addBook";
 import EditBook from "./components/book/editBook";
 
+import VideosList from "./components/video/videosList";
+import AddVideo from "./components/video/addVideo";
+import EditVideo from "./components/video/editVideos";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -38,6 +42,9 @@ const App = () => {
             <Route path="/booksList" element={<BooksList />} />
             <Route path="/addBook" element={<AddBook />} />
             <Route path="/book/edit/:id" element={<EditBook />} />
+            <Route path="/videosList" element={<VideosList />} />
+            <Route path="/addVideo" element={<AddVideo />} />
+            <Route path="/video/edit/:id" element={<EditVideo />} />
           </Routes>
         </div>
         <Footer />

@@ -8,7 +8,7 @@ export default function Footer() {
           <div className="col-md-6">
             <p>
                 Code :
-            <a href="https://github.com/votre-utilisateur/votre-projet" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/maximejournet54/site_climat/" target="_blank" rel="noopener noreferrer">
                 <img src="https://tse1.explicit.bing.net/th?id=OIP.fqZ9-PPqcG_cm0k3JfoINQHaEK&pid=Api" alt="GitHub" style={{ "width": 100, "height": 50 }}/>
               </a>
             </p>

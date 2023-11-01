@@ -27,6 +27,13 @@ router.get("/getBookTags", async (req, res) => {
   res.send(results).status(200);
 });
 
+// This section will help you get a a list of all the records of type video
+router.get("/getVideoTags", async (req, res) => {
+  let collection = await db.collection("categories");
+  let results = await collection.find({ type: "video" }).toArray();
+  res.send(results).status(200);
+});
+
 // This section will help you get a single record by id
 router.get("/getSingleTag/:id", async (req, res) => {
   let collection = await db.collection("categories");

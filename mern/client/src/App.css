@@ -91,9 +91,15 @@
 
 .td-description {
   width: 30%;
+  max-width: 100px;
 }
 
 .td-action {
+  width: 15%;
+  max-width: 100px;
+}
+
+.td-name {
   width: 20%;
   max-width: 100px;
 }

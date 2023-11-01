@@ -11,7 +11,7 @@ const Record = (props) => {
       <td>{sortedTags.join(", ")}</td>
       <td>{props.record.name}</td>
       <td className="td-description">{props.record.description}</td>
-      <td className="td-url">
+      <td className="td-url" style={{ width: '10%', maxWidth: '150px', overflow: 'hidden' }}>
         <a
           href={props.record.url}
           target="_blank"

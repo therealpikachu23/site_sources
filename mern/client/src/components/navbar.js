@@ -59,8 +59,18 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/addTag">
-                Ajouter tag
+              <NavLink className="nav-link" to="/videosList">
+                Vidéos
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mx-auto">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/addBook">
+                Ajouter livre
               </NavLink>
             </li>
           </ul>
@@ -79,8 +89,18 @@ export default function Navbar() {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/addBook">
-                Ajouter livre
+              <NavLink className="nav-link" to="/addTag">
+                Ajouter tag
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mx-auto">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/addVideo">
+                Ajouter video
               </NavLink>
             </li>
           </ul>

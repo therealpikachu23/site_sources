@@ -94,18 +94,6 @@ export default function AddSource() {
         </div>
         <br />
         <div className="form-group">
-          <label htmlFor="url">URL</label>
-          <input
-            type="text"
-            className="form-control"
-            id="url"
-            value={form.url}
-            onChange={(e) => updateForm({ url: e.target.value })}
-            autoComplete="off"
-          />
-        </div>
-        <br />
-        <div className="form-group">
           <label htmlFor="description">Description</label>
           <input
             type="text"
@@ -113,6 +101,18 @@ export default function AddSource() {
             id="description"
             value={form.description}
             onChange={(e) => updateForm({ description: e.target.value })}
+            autoComplete="off"
+          />
+        </div>
+        <br />
+        <div className="form-group">
+          <label htmlFor="url">URL</label>
+          <input
+            type="text"
+            className="form-control"
+            id="url"
+            value={form.url}
+            onChange={(e) => updateForm({ url: e.target.value })}
             autoComplete="off"
           />
         </div>

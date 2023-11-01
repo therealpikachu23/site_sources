@@ -1,10 +1,9 @@
 import express from "express";
 import cors from "cors";
-import "./loadEnvironment.mjs";
 import tagRecords from "./routes/TagRecords.mjs";
 import sourceRecords from "./routes/SourcesRecords.mjs"
 import bookRecords from "./routes/BooksRecords.mjs"
-import videoRecords from "./routes/VideoRecords.mjs"
+import videoRecords from "./routes/VideosRecords.mjs"
 
 const PORT = process.env.PORT || 5050;
 const app = express();

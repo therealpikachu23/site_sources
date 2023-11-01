@@ -4,14 +4,14 @@ import Select from "react-select";
 
 const Record = (props) => {
   // Triez les tags avant de les joindre
-  const sortedTags = props.record.tag.sort();
+  const sortedTags = props.record.tag.slice().sort((a, b) => a.localeCompare(b));
 
   return (
     <tr>
-      <td>{sortedTags.join(", ")}</td>
-      <td className="td-name">{props.record.name}</td>
+      <td style={{ width: '10%' }}>{sortedTags.join(", ")}</td>
+      <td style={{ width: '10%' }}>{props.record.name}</td>
       <td className="td-description">{props.record.description}</td>
-      <td className="td-url" style={{ width: '10%', maxWidth: '150px', overflow: 'hidden' }}>
+      <td className="td-url" style={{ width: '30%', maxWidth: '150px', overflow: 'hidden' }}>
         <a
           href={props.record.url}
           target="_blank"
@@ -21,7 +21,7 @@ const Record = (props) => {
         </a>
       </td>
       <td className="td-action">
-        <Link className="btn btn-link" to={`/book/edit/${props.record._id}`}>
+        <Link className="btn btn-link" to={`/video/edit/${props.record._id}`}>
           Editer
         </Link>{" "}
         |{" "}
@@ -38,18 +38,15 @@ const Record = (props) => {
   );
 };
 
-export default function BooksList() {
+export default function VideosList() {
   const [records, setRecords] = useState([]);
   const [tags, setTags] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const tagOptions = tags
-    .map((tag) => ({ label: tag, value: tag }))
-    .sort((a, b) => a.label.localeCompare(b.label)); // Tri des options par ordre alphabétique
 
   useEffect(() => {
     async function getRecords() {
-      const response = await fetch(`http://localhost:5050/book/getAllBooks`);
+      const response = await fetch(`http://localhost:5050/video/getAllVideos`);
 
       if (!response.ok) {
         const message = `An error occurred: ${response.statusText}`;
@@ -65,14 +62,17 @@ export default function BooksList() {
       setRecords(records);
 
       const allTags = [...new Set(records.flatMap((record) => record.tag))];
-      setTags(allTags.sort()); // Tri des tags par ordre alphabétique
+
+      const sortedTags = allTags.sort();
+
+      setTags(sortedTags); // Les tags triés
     }
 
     getRecords();
   }, []);
 
   async function deleteRecord(id) {
-    await fetch(`http://localhost:5050/book/deleteBook/${id}`, {
+    await fetch(`http://localhost:5050/video/deleteVideo/${id}`, {
       method: "DELETE",
     });
 
@@ -100,8 +100,8 @@ export default function BooksList() {
   return (
     <div>
       <div >
-        <h3>Livres</h3>
-        <strong>Total :</strong> {filteredRecords.length} livres
+        <h3>Vidéos</h3>
+        <strong>Total :</strong> {filteredRecords.length} sources de type vidéo
         <br />
         <strong>Filtres :</strong>
         <br />
@@ -109,12 +109,17 @@ export default function BooksList() {
           <Select
             className="search-select Select"
             placeholder=""
-            options={tagOptions}
+            options={tags.map((tag) => ({
+              label: tag,
+              value: tag,
+            }))
+              .sort((a, b) => a.label.localeCompare(b.label))} // Tri des tags par ordre alphabétique
             isMulti
             onChange={handleTagChange}
-            value={tagOptions.filter((option) =>
-              selectedTags.includes(option.value)
-            )}
+            value={selectedTags.map((tag) => ({
+              label: tag,
+              value: tag,
+            }))}
             styles={{ control: (provided) => ({ ...provided, width: "300px" }) }}
           />
           <input
