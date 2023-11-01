@@ -24,9 +24,7 @@ yarn-error.log*
 
 .txt
 .drawio
-.bkp
-
-# Exclude the specific file "todo.md"
-/todo.md
 
 /autre
+/client/node_modules
+/server/node_modules
