@@ -1,8 +1,0 @@
-dans terminal 1:
-cd .\mern\server\
-$env:ATLAS_URI="mongodb+srv://testuser:test@cluster0.eqadwyd.mongodb.net/test?retryWrites=true&w=majority"
-node server.mjs
-
-dans terminal 2:
-cd .\mern\client\
-npm start
