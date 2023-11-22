@@ -108,7 +108,7 @@ export default function BooksList() {
         <div className="search-container">
           <Select
             className="search-select Select"
-            placeholder=""
+            placeholder="Trier par tag"
             options={tagOptions}
             isMulti
             onChange={handleTagChange}

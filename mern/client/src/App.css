@@ -5,20 +5,23 @@
 .sticky-footer {
   position: fixed;
   bottom: 0;
-  left: 150px;
-  right: 150px;
   width: 100%;
-  background-color: #f8f9fa; /* Couleur de fond du footer */
-  padding: 10px; /* Espace de remplissage pour le contenu du footer */
-  text-align: center; /* Ajustez la mise en page du texte du footer au besoin */
-  z-index: 5; /* Ajustez le z-index pour afficher le footer au-dessus du contenu */
+  background-color: white;
+  /* Couleur de fond du footer */
+  padding: 10px;
+  /* Espace de remplissage pour le contenu du footer */
+  text-align: center;
+  /* Ajustez la mise en page du texte du footer au besoin */
+  z-index: 5;
+  /* Ajustez le z-index pour afficher le footer au-dessus du contenu */
 }
 
 .content-container {
   margin-top: 5rem;
-  margin-left: 150px; 
-  margin-right: 150px; 
-  margin-bottom: 100px; /* Ajoutez une marge basse suffisamment grande pour éviter que le footer ne cache le contenu */
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-bottom: 100px;
+  /* Ajoutez une marge basse suffisamment grande pour éviter que le footer ne cache le contenu */
 }
 
 .fixed-navbar {
@@ -26,14 +29,15 @@
   top: 0;
   left: 150px;
   right: 150px;
-  z-index: 5; 
+  z-index: 5;
 }
 
 .sourcesFixe {
   position: fixed;
   z-index: 5;
   width: auto;
-  background-color: white; /* Fond blanc pour masquer les tr lorsque le thead est fixe */
+  background-color: white;
+  /* Fond blanc pour masquer les tr lorsque le thead est fixe */
 }
 
 .Select {
@@ -50,14 +54,17 @@
 .search-input {
   display: flex;
   align-items: center;
-  margin-left: 50px; /* Ajoutez une marge à gauche pour l'espace */
+  margin-left: 50px;
+  /* Ajoutez une marge à gauche pour l'espace */
   max-width: 500px;
 }
 
 .table-container {
-  overflow-y: auto; /* Ajoutez un défilement vertical pour le tbody */
+  overflow-y: auto;
+  /* Ajoutez un défilement vertical pour le tbody */
   overflow-x: auto;
-  max-height: calc(85vh - 160px); /* Ajustez la hauteur maximale en fonction de votre mise en page */
+  max-height: calc(85vh - 160px);
+  /* Ajustez la hauteur maximale en fonction de votre mise en page */
   margin-bottom: 150px;
 }
 
@@ -69,7 +76,8 @@
 /* Style pour le thead - restez fixe en haut */
 .table-container table thead {
   position: sticky;
-  top: 0; /* Ajustez la hauteur en fonction de votre disposition */
+  top: 0;
+  /* Ajustez la hauteur en fonction de votre disposition */
   background-color: white;
   z-index: 2;
 }
@@ -105,6 +113,101 @@
 }
 
 body {
-  overflow-y: hidden; /* Masque la barre de défilement vertical de la page */
+  overflow-y: hidden;
+  /* Masque la barre de défilement vertical de la page */
 }
 
+.loader {
+  width: 54px;
+  height: 54px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  background-color: #fff;
+  background-image:
+    radial-gradient(circle 5px, #FF3D00 100%, transparent 0),
+    radial-gradient(circle 5px, #FF3D00 100%, transparent 0),
+    radial-gradient(circle 5px, #FF3D00 100%, transparent 0),
+    radial-gradient(circle 5px, #FF3D00 100%, transparent 0),
+    radial-gradient(circle 5px, #FF3D00 100%, transparent 0),
+    radial-gradient(circle 5px, #FF3D00 100%, transparent 0);
+  background-repeat: no-repeat;
+  animation: move 3s linear infinite, rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+
+  0%,
+  20% {
+    transform: rotate(0deg)
+  }
+
+  30%,
+  40% {
+    transform: rotate(90deg)
+  }
+
+  50%,
+  60% {
+    transform: rotate(180deg)
+  }
+
+  70%,
+  80% {
+    transform: rotate(270deg)
+  }
+
+  90%,
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes move {
+
+  0%,
+  9% {
+    background-position:
+      -12px -15px, -12px 0px, -12px 15px,
+      12px -15px, 12px 0px, 12px 15px;
+  }
+
+  10%,
+  25% {
+    background-position:
+      0px -15px, -12px 0px, -12px 15px,
+      34px -15px, 12px 0px, 12px 15px;
+  }
+
+  30%,
+  45% {
+    background-position:
+      0px -34px, -12px -10px, -12px 12px,
+      34px -15px, 12px -10px, 12px 12px;
+  }
+
+  50%,
+  65% {
+    background-position:
+      0px -34px, -12px -34px, -12px 12px,
+      34px -12px, 0px -10px, 12px 12px;
+  }
+
+  70%,
+  85% {
+    background-position:
+      0px -34px, -12px -34px, 0px 12px,
+      34px -12px, 0px -10px, 34px 12px;
+  }
+
+  90%,
+  100% {
+    background-position:
+      0px -34px, -12px -34px, 0px 0px,
+      34px -12px, 0px 0px, 34px 12px;
+  }
+}

@@ -28,3 +28,5 @@ yarn-error.log*
 /autre
 /client/node_modules
 /server/node_modules
+.env
+.json

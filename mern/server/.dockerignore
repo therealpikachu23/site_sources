@@ -3,3 +3,5 @@ build
 .txt
 .md
 .draw.io
+.env
+.json

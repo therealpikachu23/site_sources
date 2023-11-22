@@ -34,6 +34,9 @@ export default function Footer() {
               <a href="https://chat.openai.com/" target="_blank" rel="noopener noreferrer">
                 <img src="https://tse4.mm.bing.net/th?id=OIP.fUn3mAR6fvP1sOAf4Mh8-QHaHa&pid=Api" alt="ChatGpt" style={{ "width": 50, "height": 50 }}/>
               </a>
+              <a href="https://www.emailjs.com/" target="_blank" rel="noopener noreferrer">
+                <img src="https://tse4.mm.bing.net/th?id=OIP.G4XxeoHQ8_6XdT1RYWLIxwHaDH&pid=Api" alt="EmailJs" style={{ "width": 100, "height": 50 }}/>
+              </a>
             </p>
           </div>
         </div>

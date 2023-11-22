@@ -27,10 +27,20 @@ export default function Navbar() {
         </button>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mx-auto ">
+          <ul className="navbar-nav mx-auto">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/tagList">
-                Tags
+              <NavLink className="nav-link" to="/infographicsList">
+                Infographies
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mx-auto">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/booksList">
+                Livres
               </NavLink>
             </li>
           </ul>
@@ -47,10 +57,10 @@ export default function Navbar() {
         </div>
 
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav mx-auto">
+          <ul className="navbar-nav mx-auto ">
             <li className="nav-item">
-              <NavLink className="nav-link" to="/booksList">
-                Livres
+              <NavLink className="nav-link" to="/tagList">
+                Tags
               </NavLink>
             </li>
           </ul>
@@ -101,6 +111,16 @@ export default function Navbar() {
             <li className="nav-item">
               <NavLink className="nav-link" to="/addVideo">
                 Ajouter video
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav mx-auto">
+            <li className="nav-item">
+              <NavLink className="nav-link" to="/contact">
+                <img style={{ "width": 50, "height": 50 }} src={require("../email.png")} alt="Contact"></img>
               </NavLink>
             </li>
           </ul>

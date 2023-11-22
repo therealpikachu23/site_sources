@@ -25,6 +25,10 @@ import VideosList from "./components/video/videosList";
 import AddVideo from "./components/video/addVideo";
 import EditVideo from "./components/video/editVideos";
 
+import InfographicsList from "./components/infographic/infographicsList";
+
+import Contact from "./components/contact";
+
 const App = () => {
   return (
     <BrowserRouter>
@@ -45,6 +49,8 @@ const App = () => {
             <Route path="/videosList" element={<VideosList />} />
             <Route path="/addVideo" element={<AddVideo />} />
             <Route path="/video/edit/:id" element={<EditVideo />} />
+            <Route path="/infographicsList" element={<InfographicsList />} />
+            <Route exact path="/contact" element={<Contact />} />
           </Routes>
         </div>
         <Footer />
