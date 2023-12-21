@@ -1,7 +1,6 @@
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
 
-// Charge les variables d'environnement à partir du fichier .env
 dotenv.config();
 
 const connectionString = process.env.ATLAS_URI || "";

@@ -1,50 +1,32 @@
-.App {
-  text-align: center;
-}
-
 .sticky-footer {
   position: fixed;
   bottom: 0;
   width: 100%;
   background-color: white;
-  /* Couleur de fond du footer */
-  padding: 10px;
-  /* Espace de remplissage pour le contenu du footer */
+  /* padding: 10px;  */
   text-align: center;
-  /* Ajustez la mise en page du texte du footer au besoin */
   z-index: 5;
-  /* Ajustez le z-index pour afficher le footer au-dessus du contenu */
 }
 
 .content-container {
   margin-top: 5rem;
-  margin-left: 150px;
-  margin-right: 150px;
-  margin-bottom: 100px;
-  /* Ajoutez une marge basse suffisamment grande pour éviter que le footer ne cache le contenu */
+  margin-left: 2rem;
+  margin-right: 2rem;
+  /* margin-bottom: 10rem; */
 }
 
 .fixed-navbar {
   position: fixed;
   top: 0;
-  left: 150px;
-  right: 150px;
+  left: 2rem;
+  right: 2rem;
   z-index: 5;
-}
-
-.sourcesFixe {
-  position: fixed;
-  z-index: 5;
-  width: auto;
-  background-color: white;
-  /* Fond blanc pour masquer les tr lorsque le thead est fixe */
 }
 
 .Select {
   z-index: 3
 }
 
-/* Ajoutez ces styles pour centrer la barre de recherche à droite du filtre Select */
 .search-container {
   display: flex;
   align-items: center;
@@ -54,18 +36,14 @@
 .search-input {
   display: flex;
   align-items: center;
-  margin-left: 50px;
-  /* Ajoutez une marge à gauche pour l'espace */
+  margin-left: 5rem;
   max-width: 500px;
 }
 
 .table-container {
-  overflow-y: auto;
-  /* Ajoutez un défilement vertical pour le tbody */
-  overflow-x: auto;
-  max-height: calc(85vh - 160px);
-  /* Ajustez la hauteur maximale en fonction de votre mise en page */
-  margin-bottom: 150px;
+  overflow-x: hidden;
+  max-height: calc(90vh - 160px);
+  padding-bottom: 50px;
 }
 
 /* Style pour le tbody */
@@ -73,33 +51,11 @@
   display: table-row;
 }
 
-/* Style pour le thead - restez fixe en haut */
 .table-container table thead {
   position: sticky;
   top: 0;
-  /* Ajustez la hauteur en fonction de votre disposition */
   background-color: white;
   z-index: 2;
-}
-
-/* Supprimez la marge du deuxième tableau */
-.table-container table:last-child {
-  margin-top: 0;
-}
-
-/* Ajoutez un espace en haut du tbody pour compenser le positionnement fixe du thead */
-.table-container table:first-child {
-  margin-top: 0;
-}
-
-.td-url {
-  max-width: 100px;
-  width: 20%;
-}
-
-.td-description {
-  width: 30%;
-  max-width: 100px;
 }
 
 .td-action {
@@ -107,14 +63,10 @@
   max-width: 100px;
 }
 
-.td-name {
-  width: 20%;
+.td-url {
+  width: 15%;
   max-width: 100px;
-}
-
-body {
-  overflow-y: hidden;
-  /* Masque la barre de défilement vertical de la page */
+  word-wrap: break-word;
 }
 
 .loader {

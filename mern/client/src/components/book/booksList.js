@@ -9,9 +9,9 @@ const Record = (props) => {
   return (
     <tr>
       <td>{sortedTags.join(", ")}</td>
-      <td className="td-name">{props.record.name}</td>
-      <td className="td-description">{props.record.description}</td>
-      <td className="td-url" style={{ width: '10%', maxWidth: '150px', overflow: 'hidden' }}>
+      <td>{props.record.name}</td>
+      <td>{props.record.description}</td>
+      <td className="td-url">
         <a
           href={props.record.url}
           target="_blank"
@@ -45,7 +45,7 @@ export default function BooksList() {
   const [searchTerm, setSearchTerm] = useState("");
   const tagOptions = tags
     .map((tag) => ({ label: tag, value: tag }))
-    .sort((a, b) => a.label.localeCompare(b.label)); // Tri des options par ordre alphabétique
+    .sort((a, b) => a.label.localeCompare(b.label)); 
 
   useEffect(() => {
     async function getRecords() {
@@ -59,13 +59,12 @@ export default function BooksList() {
 
       const records = await response.json();
 
-      // Tri des enregistrements par ordre alphabétique sur la colonne "Nom"
       records.sort((a, b) => a.name.localeCompare(b.name));
 
       setRecords(records);
 
       const allTags = [...new Set(records.flatMap((record) => record.tag))];
-      setTags(allTags.sort()); // Tri des tags par ordre alphabétique
+      setTags(allTags.sort()); 
     }
 
     getRecords();
@@ -80,12 +79,10 @@ export default function BooksList() {
     setRecords(newRecords);
   }
 
-  // Filtrer d'abord par nom
   const sourcesFilteredByName = records.filter((source) =>
     source.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Ensuite, appliquer le filtrage par tag
   const filteredRecords = selectedTags.length
     ? sourcesFilteredByName.filter((source) =>
       selectedTags.every((tag) => source.tag.includes(tag))

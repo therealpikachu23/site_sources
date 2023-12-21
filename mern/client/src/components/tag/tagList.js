@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Select from "react-select"; // Importez le composant Select
+import Select from "react-select"; 
 
 const Record = (props) => {
   return (
@@ -30,7 +30,7 @@ export default function TagList() {
   const [records, setRecords] = useState([]);
   const [filterValue] = useState("");
   const [sortedRecords, setSortedRecords] = useState([]);
-  const [selectedTypes, setSelectedTypes] = useState([]); // Ajoutez un état pour suivre les types sélectionnés
+  const [selectedTypes, setSelectedTypes] = useState([]); 
   const typeOptions = [
     { value: "livre", label: "livre" },
     { value: "source", label: "source" },
@@ -50,23 +50,20 @@ export default function TagList() {
       const records = await response.json();
       const sortedRecords = [...records].sort((a, b) => a.name.localeCompare(b.name));
       setRecords(records);
-      setSortedRecords(sortedRecords); // Déplacez cette ligne ici
+      setSortedRecords(sortedRecords); 
     }
 
     getRecords();
   }, []);
 
-  // Filtrer les enregistrements en fonction du filtre de nom
   const filteredRecords = sortedRecords.filter((record) =>
     record.name.toLowerCase().includes(filterValue.toLowerCase())
   );
 
-  // Gérez le changement des types sélectionnés
   const handleTypeChange = (selectedOptions) => {
     setSelectedTypes(selectedOptions);
   };
 
-  // This method will delete a record
   async function deleteRecord(id) {
     await fetch(`http://localhost:5050/tag/deleteTag/${id}`, {
       method: "DELETE",
@@ -77,7 +74,6 @@ export default function TagList() {
   }
 
   function recordList() {
-    // Filtrer les enregistrements en fonction des types sélectionnés
     const recordsFilteredByType = filteredRecords.filter((record) =>
       selectedTypes.every((selectedType) => record.type.includes(selectedType.value))
     );
@@ -100,7 +96,6 @@ export default function TagList() {
         <strong>Filtres :</strong>
         <br />
         <div className="search-container">
-          {/* Utilisez le Select multi-sélection pour filtrer par type avec les options de type définies */}
           <Select
             className="search-select Select"
             placeholder="Filtrer par type"

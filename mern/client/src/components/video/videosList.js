@@ -3,15 +3,14 @@ import { Link } from "react-router-dom";
 import Select from "react-select";
 
 const Record = (props) => {
-  // Triez les tags avant de les joindre
   const sortedTags = props.record.tag.slice().sort((a, b) => a.localeCompare(b));
 
   return (
     <tr>
-      <td style={{ width: '10%' }}>{sortedTags.join(", ")}</td>
-      <td style={{ width: '10%' }}>{props.record.name}</td>
-      <td className="td-description">{props.record.description}</td>
-      <td className="td-url" style={{ width: '30%', maxWidth: '150px', overflow: 'hidden' }}>
+      <td>{sortedTags.join(", ")}</td>
+      <td>{props.record.name}</td>
+      <td>{props.record.description}</td>
+      <td>
         <a
           href={props.record.url}
           target="_blank"

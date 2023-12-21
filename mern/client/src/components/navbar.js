@@ -12,7 +12,7 @@ export default function Navbar() {
     <div className="fixed-navbar">
       <nav className="navbar navbar-expand-lg navbar-light bg-light  ">
         <NavLink className="navbar-brand" to="/">
-          <img style={{ "width": 50, "height": 50 }} src={require("../home.png")} alt="Logo"></img>
+          <img style={{ "width": 40, "height": 40 }} src={require("../home.png")} alt="Logo"></img>
         </NavLink>
         <button
           className="navbar-toggler"
@@ -120,7 +120,7 @@ export default function Navbar() {
           <ul className="navbar-nav mx-auto">
             <li className="nav-item">
               <NavLink className="nav-link" to="/contact">
-                <img style={{ "width": 50, "height": 50 }} src={require("../email.png")} alt="Contact"></img>
+                <img style={{ "width": 40, "height": 40 }} src={require("../email.png")} alt="Contact"></img>
               </NavLink>
             </li>
           </ul>
@@ -129,4 +129,4 @@ export default function Navbar() {
       </nav>
     </div>
   );
-}
+} 

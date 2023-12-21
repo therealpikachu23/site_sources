@@ -3,15 +3,14 @@ import { Link } from "react-router-dom";
 import Select from "react-select";
 
 const Record = (props) => {
-  // Triez les tags avant de les joindre
   const sortedTags = props.record.tag.sort();
 
   return (
     <tr>
       <td>{sortedTags.join(", ")}</td>
       <td>{props.record.name}</td>
-      <td className="td-description">{props.record.description}</td>
-      <td className="td-url" style={{ width: '10%', maxWidth: '150px', overflow: 'hidden' }}>
+      <td>{props.record.description}</td>
+      <td>
         <a
           href={props.record.url}
           target="_blank"
@@ -45,7 +44,7 @@ export default function SourceList() {
   const [searchTerm, setSearchTerm] = useState("");
   const tagOptions = tags
     .map((tag) => ({ label: tag, value: tag }))
-    .sort((a, b) => a.label.localeCompare(b.label)); // Tri des options par ordre alphabétique
+    .sort((a, b) => a.label.localeCompare(b.label)); 
 
   useEffect(() => {
     async function getRecords() {
@@ -59,13 +58,12 @@ export default function SourceList() {
 
       const records = await response.json();
 
-      // Tri des enregistrements par ordre alphabétique sur la colonne "Nom"
       records.sort((a, b) => a.name.localeCompare(b.name));
 
       setRecords(records);
 
       const allTags = [...new Set(records.flatMap((record) => record.tag))];
-      setTags(allTags.sort()); // Tri des tags par ordre alphabétique
+      setTags(allTags.sort()); 
     }
 
     getRecords();
@@ -80,12 +78,10 @@ export default function SourceList() {
     setRecords(newRecords);
   }
 
-  // Filtrer d'abord par nom
   const sourcesFilteredByName = records.filter((source) =>
     source.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  // Ensuite, appliquer le filtrage par tag
   const filteredRecords = selectedTags.length
     ? sourcesFilteredByName.filter((source) =>
         selectedTags.every((tag) => source.tag.includes(tag))

@@ -6,7 +6,7 @@ export default function AddTag() {
     name: "",
     type: [], // Type initial vide
   });
-  const [types, setTypes] = useState(["source", "video", "livre"]); // Options disponibles
+  const [types] = useState(["source", "video", "livre"]); // Options disponibles
 
   // Triez le tableau types par ordre alphabétique
   types.sort();

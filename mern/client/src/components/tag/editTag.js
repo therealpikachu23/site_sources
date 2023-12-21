@@ -7,7 +7,7 @@ export default function EditTag() {
     name: '',
     type: [],
   });
-  const [types, setTypes] = useState(['source', 'livre', 'video']); // Options disponibles
+  const [types] = useState(['source', 'livre', 'video']); // Options disponibles
   const params = useParams();
   const navigate = useNavigate();
 
